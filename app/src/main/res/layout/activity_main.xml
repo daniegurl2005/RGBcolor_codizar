@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".MainActivity">
+
+    <!-- Application Bar -->
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:background="#800080"
+        android:title="My Application"
+        android:titleTextColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Title -->
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="Create an RGB Color"
+        android:textColor="#222222"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <!-- Description -->
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="center"
+        android:text="Add two hexadecimal characters between 0-9, A-F or a-f without the # for each channel"
+        android:textColor="#444444"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <!-- Red Channel -->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/redInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="18dp"
+        android:hint="Red Channel"
+        app:boxStrokeColor="#800080"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDescription">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/redInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="0123456789ABCDEFabcdef"
+            android:inputType="text"
+            android:maxLength="2"
+            android:singleLine="true"
+            android:text="FF" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Green Channel -->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/greenInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="18dp"
+        android:hint="Green Channel"
+        app:boxStrokeColor="#800080"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/redInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/greenInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="0123456789ABCDEFabcdef"
+            android:inputType="text"
+            android:maxLength="2"
+            android:singleLine="true"
+            android:text="44" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Blue Channel -->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/blueInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="18dp"
+        android:hint="Blue Channel"
+        app:boxStrokeColor="#800080"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/greenInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/blueInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="0123456789ABCDEFabcdef"
+            android:inputType="text"
+            android:maxLength="2"
+            android:singleLine="true"
+            android:text="00" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Create RGB Color Button -->
+
+    <Button
+        android:id="@+id/createColorButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="18dp"
+        android:backgroundTint="#800080"
+        android:text="CREATE RGB COLOR"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/blueInputLayout" />
+
+    <!-- Created Color Display -->
+
+    <TextView
+        android:id="@+id/colorDisplay"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="18dp"
+        android:background="#FF4400"
+        android:gravity="center"
+        android:text="#FF4400"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/createColorButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
